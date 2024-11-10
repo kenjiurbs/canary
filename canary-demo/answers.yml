@@ -10,7 +10,7 @@ service_endpoints:
 
 # Ingress Information
 ingress_details:
-  address: blank:80
+  address: 192.168.49.2
   host: canary-demo.local
 
 # Metrics
