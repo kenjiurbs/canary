@@ -1,35 +1,35 @@
 # Deployment Information
 pods_status:
-  main_pods_running: 1
+  main_pods_running: 3
   canary_pods_running: 1
 
 # Service Information
 service_endpoints:
-  main_service_cluster_ip: https://animated-train-g47vqx546v953jvp-8080.app.github.dev/
-  canary_service_cluster_ip: https://animated-train-g47vqx546v953jvp-8081.app.github.dev/
+  main_service_cluster_ip: 10.107.73.115 
+  canary_service_cluster_ip: 10.105.166.18
 
 # Ingress Information
 ingress_details:
-  address: https://animated-train-g47vqx546v953jvp-8082.app.github.dev/
+  address: blank:80
   host: canary-demo.local
 
 # Metrics
 main_deployment_metrics:
-  http_requests_total: 17.0
-  process_cpu_seconds_total: 0.44999999999999996
-  process_resident_memory_bytes: 3.0093312e+07
+  http_requests_total: 18.0
+  process_cpu_seconds_total: 0.32
+  process_resident_memory_bytes: 3.0384128e+07
 
 canary_deployment_metrics:
-  http_requests_total: 3
-  process_cpu_seconds_total: 0.44999999999999996
-  process_resident_memory_bytes: 3.0093312e+07
+  http_requests_total: 7
+  process_cpu_seconds_total: 0.27
+  process_resident_memory_bytes: 3.0810112e+07
 
 # Traffic Distribution Test
 traffic_test_results:
   total_requests_sent: 20
-  main_responses_received: 17
-  canary_responses_received: 3
-  actual_canary_percentage: 15
+  main_responses_received: 18
+  canary_responses_received: 2
+  actual_canary_percentage: 10
 
 # Prometheus Queries
 prometheus_metrics:
@@ -40,7 +40,7 @@ prometheus_metrics:
 rollback_test:
   previous_revision: 1
   rollback_command_used: helm rollback canary-demo 1 -n canary-demo
-  time_to_rollback_seconds: <1 second
+  time_to_rollback_seconds: 59 seconds
 
 # Error Budget Calculation (based on 99.9% SLO)
 error_budget:
